@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingressportal
+  namespace: prod
+spec:
+  rules:
+  - host: portal.172.20.0.2.nip.io
+    http:
+      paths:
+      - backend:
+          serviceName: svcportalnoticias
+          servicePort: 80
+        path: /

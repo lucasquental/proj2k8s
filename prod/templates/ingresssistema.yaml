@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingressistema
+  namespace: prod
+spec:
+  rules:
+  - host: sistema.172.20.0.2.nip.io
+    http:
+      paths:
+      - backend:
+          serviceName: svcsistemanoticias
+          servicePort: 80
+        path: /

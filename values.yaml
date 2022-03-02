@@ -1,0 +1,15 @@
+#sistemaconfigmap
+VALUEHELM: value-do-helm-para-teste
+HOST_DB: svcdbnoticias:3306
+USER_DB: root
+PASS_DB: password
+DATABASE_DB: empresa
+#dbsecrets
+MYSQL_ROOT_PASSWORD: cGFzc3dvcmQ=
+MYSQL_PASSWORD: cGFzc3dvcmQ=
+#portalconfigmap
+IP_SISTEMA: http://172.20.0.2:30001
+#dbconfigmap
+MYSQL_DATABASE: empresa
+#secrettest
+CHAVESECRETTEST: cGFzc3dvcmQ=

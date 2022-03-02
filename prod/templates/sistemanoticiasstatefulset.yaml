@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sistemanoticiasstatefulset
+  namespace: prod
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: sistemanoticias
+      labels:
+        app: sistemanoticias
+    spec:
+      containers:
+        - name: sistemanoticiascontainer
+          image: aluracursos/sistema-noticias:1
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: sistemaconfigmap
+          volumeMounts:
+            - name: imagens
+              mountPath: /var/www/html/uploads
+            - name: sessao
+              mountPath: /tmp
+            - name: volumesk8s
+              mountPath: /data/volumek8s
+            - name: secrettest
+              mountPath: /data/secrettest
+      volumes:
+        - name: imagens
+          persistentVolumeClaim:
+            claimName: imagenspvc
+        - name: sessao
+          persistentVolumeClaim:
+            claimName: sessaopvc
+        - name: volumesk8s
+          hostPath:
+            path: /volumesk8s
+        - name: secrettest
+          secret:
+            secretName: secrettest
+  selector:
+    matchLabels:
+      app: sistemanoticias
+  serviceName: svcsistemanoticias

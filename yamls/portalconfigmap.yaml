@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portalconfigmap
+  namespace: prod
+data:
+  IP_SISTEMA: http://172.20.0.2:30001

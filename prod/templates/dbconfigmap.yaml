@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dbconfigmap
+  namespace: prod
+data:
+  MYSQL_DATABASE: {{.Values.MYSQL_DATABASE}}
