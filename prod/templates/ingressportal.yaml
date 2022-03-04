@@ -5,8 +5,7 @@ metadata:
   namespace: prod
 spec:
   rules:
-  - host: portal.172.20.0.2.nip.io
-    http:
+  - http:
       paths:
       - backend:
           serviceName: svcportalnoticias
