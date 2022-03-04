@@ -4,9 +4,8 @@ metadata:
   name: svcportalnoticias
   namespace: prod
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 80
-      nodePort: 30000
   selector:
     app: portalnoticias
