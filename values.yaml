@@ -8,7 +8,7 @@ DATABASE_DB: empresa
 MYSQL_ROOT_PASSWORD: cGFzc3dvcmQ=
 MYSQL_PASSWORD: cGFzc3dvcmQ=
 #portalconfigmap
-IP_SISTEMA: http://172.20.0.2:30001
+IP_SISTEMA: http://svcsistemanoticias:80
 #dbconfigmap
 MYSQL_DATABASE: empresa
 #secrettest
